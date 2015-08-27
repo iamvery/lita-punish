@@ -1,7 +1,20 @@
 module Lita
   module Handlers
     class Punish < Handler
-      # insert handler code here
+      SNARK = [
+        "*ahem*",
+        "rly?",
+        "SHH",
+        "ಠ_ಠ",
+      ]
+
+      route /^(?!TIL)/i, :punish
+
+      def punish(response)
+        if response.message.source.room == "today-i-learned"
+          response.reply SNARK.sample
+        end
+      end
 
       Lita.register_handler(self)
     end
