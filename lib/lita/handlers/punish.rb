@@ -12,7 +12,9 @@ module Lita
       route /roome/, :roome, command: true
 
       def punish(response)
-        if response.message.source.room == "#today-i-learned"
+        room = ENV.fetch("LITA_PUNISH_ROOM", "lolwat")
+
+        if response.message.source.room == room
           response.reply SNARK.sample
         end
       end
