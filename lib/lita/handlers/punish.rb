@@ -11,7 +11,7 @@ module Lita
       route /^(?!TIL)/i, :punish
 
       def punish(response)
-        if response.message.source.room == "today-i-learned"
+        if response.message.source.room == "#today-i-learned"
           response.reply SNARK.sample
         end
       end

@@ -8,7 +8,7 @@ describe Lita::Handlers::Punish, lita_handler: true do
   describe "#punish" do
     context "message from #today-i-learned" do
       it "replies with snark" do
-        send_message("lolwat", from: "today-i-learned")
+        send_message("lolwat", from: "#today-i-learned")
 
         expect(described_class::SNARK).to include(replies.last)
       end
