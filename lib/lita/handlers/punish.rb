@@ -8,6 +8,7 @@ module Lita
         "ಠ_ಠ",
       ]
 
+      # http://rubular.com/r/T8u1Wgk3Ix
       route /^(?!TIL)/i, :punish
       route /roome/, :roome, command: true
 
